@@ -1,0 +1,15 @@
+group 'com.athaydes.fx3d'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'com.athaydes.automaton:Automaton:1.3.2'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
