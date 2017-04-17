@@ -1,0 +1,32 @@
+buildscript {
+    dependencies {
+        classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'
+    }
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'javafx-gradle-plugin'
+
+repositories {
+    mavenLocal()
+    jcenter()
+    flatDir {
+        dirs rootProject.file( '../../build/libs' )
+    }
+}
+
+dependencies {
+    compile 'com.athaydes.fx3d:fx3d:1.0-SNAPSHOT'
+}
+
+jfx {
+    // minimal requirement for jfxJar-task
+    mainClass = 'com.athaydes.fx3d.demos.SpinningCube'
+
+    // minimal requirement for jfxNative-task
+    vendor = 'renatoathaydes'
+}
